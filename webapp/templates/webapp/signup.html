@@ -1,0 +1,31 @@
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+	<title></title>
+</head>
+<body>
+<div class="container jumbotron">
+	{% if form.errors %}
+		    {% for field in form %}
+        {% for error in field.errors %}
+            <div class="alert alert-danger">
+                <strong>{{ error|escape }}</strong>
+            </div>
+        {% endfor %}
+    {% endfor %}
+	{% endif %}
+<form method="post">
+	{% csrf_token %}
+	{% bootstrap_form form %}
+	<button class="btn btn-primary" type="submit">Sign Up</button>
+</form>	
+</div>
+
+</body>
+</html>
+
+
+
