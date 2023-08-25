@@ -5,7 +5,7 @@ from fontio3.glyf import ttsimpleglyph, ttcompositeglyph, ttcomponents, ttcompon
 from fontio3.hmtx import MtxEntry
 from fontio3.GSUB import ligature_glyphtuple
 from fontio3.GSUB import ligature
-#new content 
+#new content 2
 
 def geteditorfrompath(path, ttcindex=None):
     if ttcindex is not None:
